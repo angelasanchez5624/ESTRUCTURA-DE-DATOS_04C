@@ -4,32 +4,45 @@
 // El Problema: Cuando un socio digita su código, el sistema debe validar si el código está en la lista de "pagos al día". Si no está, se le niega la entrada.
 // Algoritmo a usar: Búsqueda Binaria. Es eficiente para buscar códigos numéricos en una lista que ya está organizada.
 
+import java.util.Scanner;
+
 public class E4 {
+
     public static void main(String[] args) {
-        int[] codigos = {101, 203, 305, 410, 550};
-        int codigoIngresado = 305;
+
+        Scanner sc = new Scanner(System.in);
+
+        int[] codigos = {1001, 1020, 1050, 1100, 1200, 1300, 1400, 1500, 1600, 1700};
+
+        System.out.print("Ingrese su código de acceso: ");
+        int codigoIngresado = sc.nextInt();
 
         int inicio = 0;
         int fin = codigos.length - 1;
-        boolean autorizado = false;
+        boolean encontrado = false;
 
         while (inicio <= fin) {
+
             int medio = (inicio + fin) / 2;
 
             if (codigos[medio] == codigoIngresado) {
-                autorizado = true;
+                encontrado = true;
                 break;
-            } else if (codigos[medio] < codigoIngresado) {
-                inicio = medio + 1;
-            } else {
+            } 
+            else if (codigoIngresado < codigos[medio]) {
                 fin = medio - 1;
+            } 
+            else {
+                inicio = medio + 1;
             }
         }
 
-        if (autorizado) {
-            System.out.println("Acceso permitido");
+        if (encontrado) {
+            System.out.println("Acceso permitido.");
         } else {
-            System.out.println("Acceso denegado");
+            System.out.println("Acceso denegado.");
         }
+
+        sc.close();
     }
 }

@@ -5,8 +5,18 @@
 // Algoritmo a usar: Búsqueda Lineal con Contador. Debes recorrer todo el arreglo y, cada vez que encuentres un 5.0, aumentar una variable contador.
 
 public class E5 {
+
     public static void main(String[] args) {
-        double[] notas = {3.5, 5.0, 4.2, 5.0, 2.8, 5.0};
+        
+        double[] notas = {
+            3.5, 4.0, 2.8, 5.0, 4.5,
+            3.0, 5.0, 4.2, 3.8, 2.9,
+            4.7, 5.0, 3.6, 4.1, 3.3,
+            2.5, 4.9, 5.0, 3.7, 4.4,
+            3.2, 2.8, 5.0, 4.6, 3.9,
+            4.0, 3.1, 2.7, 5.0, 4.8
+        };
+
         int contador = 0;
 
         for (int i = 0; i < notas.length; i++) {
@@ -15,6 +25,6 @@ public class E5 {
             }
         }
 
-        System.out.println("Cantidad de estudiantes con nota 5.0: " + contador);
+        System.out.println("Cantidad de estudiantes que sacaron 5.0: " + contador);
     }
 }
