@@ -16,64 +16,68 @@ public class E5 {
 
         Scanner sc = new Scanner(System.in);
 
-        int n = 6;
-        int[] numeros = new int[n];
-        int[] copia1 = new int[n];
-        int[] copia2 = new int[n];
+        int[] datos = new int[6];
+        int[] seleccion;
+        int[] insercion;
 
         System.out.println("Ingrese 6 numeros enteros:");
 
-        for (int i = 0; i < n; i++) {
-            numeros[i] = sc.nextInt();
-            copia1[i] = numeros[i];
-            copia2[i] = numeros[i];
+        for (int i = 0; i < 6; i++) {
+            datos[i] = sc.nextInt();
         }
+
+        seleccion = datos.clone();
+        insercion = datos.clone();
 
         int intercambios = 0;
 
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < seleccion.length - 1; i++) {
+
             int min = i;
 
-            for (int j = i + 1; j < n; j++) {
-                if (copia1[j] < copia1[min]) {
+            for (int j = i + 1; j < seleccion.length; j++) {
+
+                if (seleccion[j] < seleccion[min]) {
                     min = j;
                 }
             }
 
             if (min != i) {
-                int temp = copia1[i];
-                copia1[i] = copia1[min];
-                copia1[min] = temp;
+                int temp = seleccion[i];
+                seleccion[i] = seleccion[min];
+                seleccion[min] = temp;
                 intercambios++;
             }
         }
 
         int movimientos = 0;
 
-        for (int i = 1; i < n; i++) {
-            int clave = copia2[i];
+        for (int i = 1; i < insercion.length; i++) {
+
+            int clave = insercion[i];
             int j = i - 1;
 
-            while (j >= 0 && copia2[j] > clave) {
-                copia2[j + 1] = copia2[j];
+            while (j >= 0 && insercion[j] > clave) {
+
+                insercion[j + 1] = insercion[j];
                 j--;
                 movimientos++;
             }
 
-            copia2[j + 1] = clave;
+            insercion[j + 1] = clave;
         }
 
-        System.out.println("\nIntercambios en Selection Sort: " + intercambios);
-        System.out.println("Movimientos en Insertion Sort: " + movimientos);
+        System.out.println("Intercambios en Seleccion: " + intercambios);
+        System.out.println("Movimientos en Insercion: " + movimientos);
 
         if (intercambios < movimientos) {
-            System.out.println("Selection Sort fue mas eficiente para estos datos.");
+            System.out.println("Seleccion fue mas eficiente para estos datos.");
         } else if (movimientos < intercambios) {
-            System.out.println("Insertion Sort fue mas eficiente para estos datos.");
+            System.out.println("Insercion fue mas eficiente para estos datos.");
         } else {
-            System.out.println("Ambos algoritmos tuvieron la misma eficiencia.");
+            System.out.println("Ambos metodos tuvieron la misma eficiencia.");
         }
-        
+
         sc.close();
     }
 }
