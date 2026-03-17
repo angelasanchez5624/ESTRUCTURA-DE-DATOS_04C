@@ -64,13 +64,14 @@ public class Ejercicio2 {
         double promedio = (double) suma / puntajes.length;
         System.out.println("\nEl promedio total fue: " + promedio);
 
-        System.out.print("\nIngrese puntaje a buscar: ");
+        System.out.println("\n--- BÚSQUEDA LINEAL ---");
+        System.out.print("Ingrese puntaje a buscar: ");
         int buscar = leer.nextInt();
 
         int pos = busquedaLineal(puntajes, buscar);
 
         if (pos != -1)
-            System.out.println("El puntaje " + buscar + " está en el " + (pos + 1) + "° lugar.");
+            System.out.println(">> El puntaje " + buscar + " está en el " + (pos + 1) + "° lugar.");
         else
             System.out.println("Puntaje no encontrado");
 

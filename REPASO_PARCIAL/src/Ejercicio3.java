@@ -30,6 +30,7 @@ public class Ejercicio3 {
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
+        leer.useLocale(java.util.Locale.US); // Permite usar punto para decimales
 
         double[] notas = new double[5];
 
@@ -53,16 +54,23 @@ public class Ejercicio3 {
                 menor = n;
         }
 
-        System.out.println("\nLa nota más ALTA es: " + mayor);
-        System.out.println("La nota más BAJA es: " + menor);
-
         selectionSort(notas);
 
-        System.out.println("\n--- NOTAS ORDENADAS ---");
+        System.out.println("\n--- INFORME ACADÉMICO ---");
+        System.out.println("La nota más ALTA del grupo es: " + mayor);
+        System.out.println("La nota más BAJA del grupo es: " + menor);
 
-        for (double n : notas) {
-            System.out.print(n + " ");
+        System.out.println("\n--- LISTA DE NOTAS ORDENADA ---");
+
+        System.out.print("[");
+        for (int i = 0; i < notas.length; i++) {
+
+            System.out.print(notas[i]);
+
+            if (i < notas.length - 1)
+                System.out.print(", ");
         }
+        System.out.println("]");
 
         leer.close();
     }
