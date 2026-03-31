@@ -24,22 +24,15 @@ public class ListaProductos {
         }
     }
 
-    public void mostrarMenos5Dias() {
+    public void imprimirProductosPorVencer() {
         Producto actual = cabeza;
+
+        System.out.println("\nProductos con menos de 5 días para vencer:");
 
         while (actual != null) {
             if (actual.diasParaVencer < 5) {
                 System.out.println("[" + actual.nombre + " | " + actual.cantidad + " | " + actual.diasParaVencer + " días]");
             }
-            actual = actual.siguiente;
-        }
-    }
-
-    public void mostrarTodos() {
-        Producto actual = cabeza;
-
-        while (actual != null) {
-            System.out.println("[" + actual.nombre + " | " + actual.cantidad + " | " + actual.diasParaVencer + " días]");
             actual = actual.siguiente;
         }
     }

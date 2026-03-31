@@ -1,3 +1,5 @@
+// La Clase Vagon (Nodo): Debe contener contenido (String), pesoToneladas (double), origen (String) y destino (String).
+
 public class Vagon {
 
     String contenido;

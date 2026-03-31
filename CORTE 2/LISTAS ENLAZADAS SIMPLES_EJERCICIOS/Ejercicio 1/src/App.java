@@ -5,6 +5,12 @@
 // El Problema: El tren sale de una estación y se le van enganchando vagones al final.
 // Reto: Implementa un método que recorra el tren y calcule el peso total de toda la carga transportada.
 
+// Diseña un sistema para gestionar los vagones de un tren de carga internacional.
+
+// La Clase Vagon (Nodo): Debe contener contenido (String), pesoToneladas (double), origen (String) y destino (String).
+// El Problema: El tren sale de una estación y se le van enganchando vagones al final.
+// Reto: Implementa un método que recorra el tren y calcule el peso total de toda la carga transportada.
+
 import java.util.Scanner;
 
 public class App {
@@ -17,11 +23,10 @@ public class App {
 
         do {
             System.out.println("\n==============================================");
-            System.out.println("       TREN DE CARGA - Menú Principal");
+            System.out.println("             TREN DE CARGA");
             System.out.println("==============================================");
             System.out.println("1. Nuevo vagon (Agregar al final del tren)");
             System.out.println("2. Calcular peso total de la carga");
-            System.out.println();
             System.out.println("0. Salir");
             System.out.println("==============================================");
             System.out.print("Elige una opción: ");

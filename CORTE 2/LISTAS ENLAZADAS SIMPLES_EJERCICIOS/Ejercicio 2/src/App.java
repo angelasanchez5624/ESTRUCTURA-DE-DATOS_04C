@@ -13,24 +13,22 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int opcion;
+        int op = 0;
 
         ListaProductos lista = new ListaProductos();
 
-        do {
-            System.out.println("\n==============================================");
-            System.out.println("            INVENTARIO DE LACTEOS");
-            System.out.println("==============================================");
-            System.out.println("1. Agregar producto");
-            System.out.println("2. Mostrar productos con menos de 5 días");
-            System.out.println("3. Mostrar todos");
-            System.out.println("0. Salir");
-            System.out.println("==============================================");
-            System.out.print("Elige una opción: ");
+        while (op != 3) {
+            System.out.println("====================================");
+            System.out.println("     INVENTARIO DE ALIMENTOS");
+            System.out.println("====================================");
+            System.out.println("1. Agregar Producto");
+            System.out.println("2. Mostrar Productos por vencer (menos de 5 días)");
+            System.out.println("3. Salir");
+            System.out.println("====================================");
+            System.out.print("Seleccione una opción: ");
+            op = sc.nextInt();
 
-            opcion = sc.nextInt();
-
-            switch (opcion) {
+            switch (op) {
                 case 1:
                     sc.nextLine();
                     System.out.print("Nombre: ");
@@ -47,19 +45,17 @@ public class App {
                     break;
 
                 case 2:
-                    lista.mostrarMenos5Dias();
+                    lista.imprimirProductosPorVencer();
                     break;
 
                 case 3:
-                    lista.mostrarTodos();
+                    System.out.println("Saliendo del programa...");
                     break;
 
-                case 0:
-                    System.out.println("Saliendo...");
-                    break;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
             }
-
-        } while (opcion != 0);
+        }
 
         sc.close();
     }
